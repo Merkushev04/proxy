@@ -1,0 +1,9 @@
+version: '3.4'
+services: 
+  proxy: 
+    image: node:14 
+    volumes: 
+      - .:/home/node/app 
+    working_dir: /home/node/app
+    network_mode: "host"
+    command: "npm run run"

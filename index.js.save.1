@@ -1,0 +1,15 @@
+const http = require('http'); 
+const httpProxy = require('http-proxy');
+
+const LISTENER_PORT = 80;
+const RESUME_HOST_NAMES = ['resume.busprix.com', 'cm.busprix.com', 'me.busprix.com'];
+const SHOP_HOST_NAMES = ['shop.busprix.com'];
+
+
+const proxy = httpProxy.createProxyServer({}); 
+const server = http.createServer(function(req, res) {
+    // You can define here your custom logic to handle the request and then proxy the request.
+    
+  console.log(req.headers); proxy.web(req, res, { target: 'http://localhost:8001'});
+});
+server.listen(LISTENER_PORT, () => console.log('Proxy running on: ' + LISTENER_PORT));

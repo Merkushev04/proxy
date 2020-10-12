@@ -1,0 +1,11 @@
+{
+  "name": "rp-proxy",
+  "main": "index.js",
+  "scripts": {
+    "run": "npm i && nodemon ./index.js"
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.1",
+    "nodemon": "^2.0.4"
+  }
+}
